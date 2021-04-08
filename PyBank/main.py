@@ -1,7 +1,6 @@
 import os
 import csv
 
-THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
 csvpath = os.path.join('/Users/jasonlei/python-challenge/PyBank/Resources/budget_data.csv')
 
 with open(csvpath, newline='') as csvfile:
@@ -25,10 +24,21 @@ max_month = monthly_change.index(max(monthly_change)) + 1
 max_decrease = min(monthly_change)
 min_month = monthly_change.index(min(monthly_change)) + 1
 
-print("Financial Analysis")
-print("----------------------------")
-print(f"Total Months: {len(total_month)}")
-print(f"Total: ${sum(total_profit)}")
-print(f"Average Change: ${round(sum(monthly_change)/len(monthly_change),2)}")
-print(f"Greatest Increase in Profits: {total_month[max_month]} (${(str(max_increase))})")
-print(f"Greatest Decrease in Profits: {total_month[min_month]} (${(str(max_decrease))})")
+output = (
+    f"\nFinancial Analysis\n"
+    f"----------------------------\n"
+    f"Total Months: {len(total_month)}\n"
+    f"Total: ${sum(total_profit)}\n"
+    f"Average Change: ${round(sum(monthly_change)/len(monthly_change),2)}\n"
+    f"Greatest Increase in Profits: {total_month[max_month]} (${(str(max_increase))})\n"
+    f"Greatest Decrease in Profits: {total_month[min_month]} (${(str(max_decrease))})\n")
+
+print(output)
+
+#output_file = os.path.join('/Users/jasonlei/python-challenge/PyBank/analysis')
+
+results_output = os.path.join('/Users/jasonlei/python-challenge/PyBank/Analysis/Bank_result.txt')
+with open(results_output, "w") as txt_file:
+    for result in output:
+        txt_file.write(result)
+
