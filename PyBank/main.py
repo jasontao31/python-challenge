@@ -35,8 +35,6 @@ output = (
 
 print(output)
 
-#output_file = os.path.join('/Users/jasonlei/python-challenge/PyBank/analysis')
-
 results_output = os.path.join('/Users/jasonlei/python-challenge/PyBank/Analysis/Bank_result.txt')
 with open(results_output, "w") as txt_file:
     for result in output:
