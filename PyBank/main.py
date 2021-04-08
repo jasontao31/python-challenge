@@ -31,7 +31,8 @@ output = (
     f"Total: ${sum(total_profit)}\n"
     f"Average Change: ${round(sum(monthly_change)/len(monthly_change),2)}\n"
     f"Greatest Increase in Profits: {total_month[max_month]} (${(str(max_increase))})\n"
-    f"Greatest Decrease in Profits: {total_month[min_month]} (${(str(max_decrease))})\n")
+    f"Greatest Decrease in Profits: {total_month[min_month]} (${(str(max_decrease))})\n"
+)
 
 print(output)
 

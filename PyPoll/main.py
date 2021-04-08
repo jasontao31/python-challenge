@@ -28,14 +28,14 @@ with open(csvpath, newline='') as csvfile:
     correy_percent = (correy/total_votes) * 100
     li_percent = (li/total_votes) * 100
     otooley_percent = (otooley/total_votes) * 100
-    
+
     if khan_percent > max(correy_percent, li_percent, otooley_percent):
         winner = "Khan"
     elif correy_percent > max(khan_percent, li_percent, otooley_percent):
-        winner = "Correy"  
-    elif li_percent > max(correy_percent, khan_percent, otooley_percent):
+        winner = "Correy"
+    elif li_percent > max(khan_percent, correy_percent, otooley_percent):
         winner = "Li"
-    else:
+    elif otooley_percent > max(khan_percent, li_percent, correy_percent):
         winner = "O'Tooley"
 
 output = (
